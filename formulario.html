@@ -1,48 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário aula JavaScript</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="scripts.js/scripts.js" defer></script>
-    </head>
+</head>
 <body>
 
-    <div class="container">
+    <div class="container-form">
         <form id="form">
             
-            <h2>Faça seu cadastro</h2>
+            <h1>Faça seu cadastro</h1>
 
-            <label for="name">Nome:</label>
-            <input type="text" placeholder="Digite seu nome" class="obrigatorio" name="name" id="name">
+            <div class="input-group"><label for="name" class="label">Nome:</label><input type="text" placeholder="Digite seu nome" name="name" id="name"></div>
             
-            <label for="email">E-mail:</label>
-            <input type="text" placeholder="Digite seu e-mail" class="obrigatorio email" name="email" id="email">
+            <div class="input-group"><label for="email" class="label">E-mail:</label><input type="text" placeholder="Digite seu e-mail" name="email" id="email"></div>
            
-            <label for="telefone">Celular:</label>
-            <input type="text" placeholder="(00)99999-9999" class="" name="telefone" id="telefone">
+            <div class="input-group"><label for="interesse" class="label">Área de interesse</label>
+                <select>
+                    <option>Artes</option>
+                    <option>Audiovisual</option>
+                    <option>Marketing</option>
+                    <option>Tecnologia</option>
+                </select>
+            </div>
             
-            <label for="cep">CEP:</label>
-            <input type="text" placeholder="Digite seu CEP" class="" name="cep" id="cep">
+            <div class="input-group"><label for="aluno" class="label">Já é aluno?</label>
+                <input type="radio" class="radio" name="aluno" id="aluno">Sim
+                <input type="radio" class="radio" name="aluno" id="aluno">Não
+            </div>
            
-            <label for="cidade">Cidade:</label>
-            <input type="text" placeholder="Digite sua cidade" class="" name="cidade" id="cidade">
-            
-            <label for="estado">Estado:</label>
-            <input type="text" placeholder="Digite seu UF" class="" name="uf" id="uf"> 
-
-            <input type="checkbox"> Você confirma as informações acima?
+            <div class="input-group"><input type="checkbox"> Você confirma as informações acima?</div>
 
             <button type="submit">Enviar</button>
         </form>
-
-        <div id="resultado">
-            
-        </div>
-
     </div>
-    
+    <div class="container-answer">
+        <table>
+            <h1>Respostas</h1>
+        <tr>
+            <th><h2>Nome</h2></th>
+            <th><h3>Resposta</h3></th>
+        </tr>
+        <tr>
+            <th><h2>E-mail</h2></th>
+            <th><h3>Resposta</h3></th>
+        </tr>
+        <tr>
+            <th><h2>Interesse</h2></th>
+            <th><h3>Resposta</h3></th>
+        </tr>
+        <tr>
+            <th><h2>É aluno?</h2></th>
+            <th><h3>Resposta</h3></th>
+        </tr>
+        <tr>
+            <th><h2>Confirma as informações</h2></th>
+            <th><h3>Resposta</h3></th>
+        </tr>
+
+        </table>
+    </div>
+    <script src="scripts.js/scripts.js"></script>
 </body>
 </html>
