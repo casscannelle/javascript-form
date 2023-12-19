@@ -3,25 +3,15 @@ body {
     background-attachment: fixed;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    padding: 20px;
-
+    flex-wrap: wrap;
+    padding: 10px;
 }
 
-.container-form {
-    max-width: 500px;
-    width: 100%;
-    background: #fff;
-    border-radius: 15px;
-    padding: 25px 30px;
-    margin-top: 5%;
-    
-}
-
+.container-form,
 .container-answer {
-    max-width: 500px;
+    max-width: 400px;
     width: 100%;
     background: #fff;
     border-radius: 15px;
@@ -29,78 +19,89 @@ body {
     margin-top: 5%;
 }
 
-h1 {
+h1, h2, h3 {
     margin-bottom: 2rem;
     margin-top: 0.5rem;
-    font-size: 1.5rem;
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     text-align: center;
 }
 
-h2 {
-    margin-bottom: 2rem;
-    margin-top: 0.5rem;
+h2, h3 {
     font-size: 1rem;
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-    text-align: left;
 }
 
-h3 {
-    margin-bottom: 2rem;
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-    text-align: left;
-    font-weight: 300;
-}
 
 
 .input-group {
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     font-size: 1rem;
-    padding: 0.6rem;
     color: rgb(58, 57, 57);
+    display: flex;
+    flex-direction: column;
 }
 
 .label {
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     font-size: 1rem;
     padding: 0.6rem;
     color: rgb(58, 57, 57);
 }
 
-input {
-    width: 80%;
+input, select {
+    font-size: 1rem;
     padding: 0.6rem;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    margin-left: 1px;
     border: 1px solid gray;
     border-radius: 25px;
 }
 
-input:focus{
+input:focus, select:focus {
     font-size: 1rem;
     outline: 0;
     border: 1px solid rgb(150, 176, 199);
 }
 
-input[type=radio] {
+.radio {
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     font-size: 1rem;
-    border: 0px;
-    width: 100%;
-    height: 1.1rem;
+    justify-content: space-evenly;
 }
 
-.input-select{
+.label-radio {
+    width: 15%;
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     font-size: 1rem;
-    outline: none;
-    margin-top: 8px;
-    padding: 0 15px;
+    padding-left: 3px;
+    color: rgb(58, 57, 57);
+    cursor: pointer;
+    display: flex;
+    align-items: baseline;
 }
+
+#checkbox {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.input-checkbox {
+    align-items: center;
+    justify-content: space-around;
+}
+
+.checkbox {
+    margin-right: 2px;  /* Espaçamento entre o checkbox e o texto */
+}
+
+.label-checkbox {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 1rem;
+    color: rgb(58, 57, 57);
+    cursor: pointer;
+}
+
 
 button {
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     font-size: 1rem;
     align-items: center;
     border: 0 none;
@@ -125,4 +126,23 @@ button:hover {
 
 .error {
     border-color: #f00;
+}
+
+.table {
+    padding: 5px;
+}
+
+th, td {
+    border: 2px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    width: 50%;
+    text-align: center;
+}
+
+
+#loading {
+    display: none;
+    text-align: center;
+    margin: 20px;
 }

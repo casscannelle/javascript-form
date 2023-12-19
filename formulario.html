@@ -21,54 +21,64 @@
                 <label for="email" class="label">E-mail:</label>
                 <input type="text" placeholder="Digite seu e-mail" name="email" id="email">
             </div>
-           
-            <div class="input-group">
-                <label for="interesse" class="label">Área de interesse</label>
-                <div class="input-select">
-                    <select>
+            <div class="input-group" id="radio-group">
+                <label for="aluno" class="label">Já é aluno?</label>
+                <label for="alunoSim" class="label-radio">
+                <input type="radio" class="radio" name="aluno" id="alunoSim" value="Sim">Sim
+                </label>
+                <label for="alunoNao" class="label-radio">
+                <input type="radio" class="radio" name="aluno" id="alunoNao" value="Não">Não
+                </label>
+            </div>
+
+            <div class="input-group" id="select">
+                <label for="interesse" class="label">Curso:</label>
+                <select class="select-menu">
                     <option>Artes</option>
                     <option>Audiovisual</option>
                     <option>Marketing</option>
                     <option>Tecnologia</option>
-                    </select>
-                </div>
+                </select>
             </div>
             
-            <div class="input-radio">
-                <label for="aluno" class="label">Já é aluno?</label>
-                    <input type="radio" class="radio" name="aluno" id="aluno">Sim
-                    <input type="radio" class="radio" name="aluno" id="aluno">Não
+            
+            <div class="input-group" id="checkbox">
+                <div class="input-checkbox">
+                    <input type="checkbox" class="checkbox" id="confirmaInformacoes">
+                    <label for="confirmaInformacoes" class="label-checkbox">Você confirma as informações acima?</label>
+                </div>
             </div>
-           
-            <div class="input-checkbox">
-                <input type="checkbox" class="checkbox">Você confirma as informações acima?
+            <span>
+                <button type="button" onclick="processForm()">Enviar</button>
+            </span>
+        </form>
             </div>
 
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
+    
+
     <div class="container-answer">
-        <table>
-            <h1>Respostas</h1>
+        <h1>Respostas</h1>
+        <div id="loading"><h3>Carregando...</h3></div>
+        <table class="table" id="table">   
         <tr>
-            <th><h2>Nome</h2></th>
-            <th><h3>Resposta</h3></th>
+            <td><h2>Nome</h2></td>
+            <td><h3></h3></td>
         </tr>
         <tr>
-            <th><h2>E-mail</h2></th>
-            <th><h3>Resposta</h3></th>
+            <td><h2>E-mail</h2></td>
+            <td><h3></h3></td>
         </tr>
         <tr>
-            <th><h2>Interesse</h2></th>
-            <th><h3>Resposta</h3></th>
+            <td><h2>Interesse</h2></td>
+            <td><h3></h3></td>
         </tr>
         <tr>
-            <th><h2>É aluno?</h2></th>
-            <th><h3>Resposta</h3></th>
+            <td><h2>É aluno?</h2></td>
+            <td><h3></h3></td>
         </tr>
         <tr>
-            <th><h2>Confirma as informações</h2></th>
-            <th><h3>Resposta</h3></th>
+            <td><h2>Confirma as informações</h2></td>
+            <td><h3></h3></td>
         </tr>
 
         </table>

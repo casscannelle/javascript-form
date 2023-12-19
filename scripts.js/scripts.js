@@ -1,72 +1,53 @@
-const form = document.querySelector("#form")
-const nameInput = document.querySelector("#name")
-const emailInput = document.querySelector("#email")
-const telefoneInput = document.querySelector("#telefone")
-const cepInput = document.querySelector("#cep")
-const cidadeInput = document.querySelector("#cidade")
-const estadoInput = document.querySelector("#uf")
+function processForm() {
+    document.getElementById('loading').style.display = 'block';
 
-console.log(form, nameInput, emailInput, telefoneInput, cepInput)
-
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if(nameInput.value === "") {
-        alert("Por favor, insira seu e-mail corretamente");
-            return;
-    }
-
-    if(emailInput.value === "" || !isEmailValid(emailInput.value)){
-        alert("Por favor, insira seu e-mail corretamente");
-        return;
-    }
-
-    if(telefoneInput.value === "" || !isTelefoneValid(telefoneInput.value)){
-        alert("Por favor, corrija o seu telefone");
-        return;
-    }
-
-    if(cepInput.value === "" || !isCepValid(cepInput.value)){
-        alert("Por favor, preencha seu CEP corretamente");
-        return;
-    }
-
-    
-function isEmailValid(email) {
-
-    const emailRegex = new RegExp(
-        /^^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/
-    );
-
-    if(emailRegex.test(email)) {
-        return true
-    }
-    return false
+    // Simula um atraso de 2 segundos (2000 milissegundos)
+    setTimeout(function () {
+        document.getElementById('loading').style.display = 'none';
+        updateTable();
+    }, 2000);
 }
 
-function isTelefoneValid(telefone) {
+function updateTable() {
+    // Obter valores dos campos do formulário
+    var nome = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var alunoRadios = document.getElementsByName('aluno');
+    var aluno = getRadioValue(alunoRadios);
+    var interesse = document.querySelector('.select-menu').value;
+    var confirmaInformacoes = document.getElementById('confirmaInformacoes').checked ? 'Sim' : 'Não';
 
-    const telefoneRegex = new RegExp(
-        /^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/
-    )
-
-    if(telefoneRegex.test(telefone)) {
-        return true
-    }
-    return false
+    // Atualizar a tabela com os valores do formulário
+    document.getElementById('table').innerHTML = `
+        <tr>
+            <td><h2>Nome</h2></td>
+            <td><h3>${nome}</h3></td>
+        </tr>
+        <tr>
+            <td><h2>E-mail</h2></td>
+            <td><h3>${email}</h3></td>
+        </tr>
+        <tr>
+            <td><h2>É aluno?</h2></td>
+            <td><h3>${aluno}</h3></td>
+        </tr>
+        <tr>
+            <td><h2>Curso</h2></td>
+            <td><h3>${interesse}</h3></td>
+        </tr>
+        <tr>
+            <td><h2>Confirma as informações?</h2></td>
+            <td><h3>${confirmaInformacoes}</h3></td>
+        </tr>
+    `;
 }
 
-function isCepValid(cep) {
+function getRadioValue() {
+    var selectedRadio = document.querySelector('input[name="aluno"]:checked');
 
-    const cepRegex = new RegExp(
-        /^[0-9]{5}-[0-9]{3}$/
-    );
-
-    if(cepRegex.test(cep)) {
-        return true
+    if (selectedRadio) {
+        return selectedRadio.value;
     }
-    return false
-}
 
-form.submit();
-});
+    return '';
+}
